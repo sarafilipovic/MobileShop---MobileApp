@@ -68,4 +68,9 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
+    public void openReset(View view){
+        Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
+        startActivity(intent);
+    }
 }
