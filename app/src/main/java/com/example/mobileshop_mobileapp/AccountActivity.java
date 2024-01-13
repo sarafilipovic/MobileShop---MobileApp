@@ -60,4 +60,26 @@ public class AccountActivity extends AppCompatActivity {
 
         }
     }
+    public void confirmReset(View view) {
+        FirebaseUser user = auth.getCurrentUser();
+        if (novaLozinka != null) {
+            String password = novaLozinka.getText().toString();
+
+            assert user != null;
+            user.updatePassword(password).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(AccountActivity.this, "Uspješno ste promijenili lozinku", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AccountActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(AccountActivity.this, "Greška prilikom promjene lozinke", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(AccountActivity.this, "EditText za lozinku je null", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
