@@ -1,0 +1,24 @@
+<!-- res/layout/add_task_dialog.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_deca"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:padding="40dp"
+        android:layout_gravity="start"
+        android:text="MobileShop aplikacija osmišljena je kako bi korisnicima pružila jednostavan i brz način kupnje mobitela. Ukoliko imate bilo kakvih pitanja ili prijedloga, slobodno nas kontaktirajte putem e-maila ili telefona."
+        />
+
+
+
+
+
+</LinearLayout>
