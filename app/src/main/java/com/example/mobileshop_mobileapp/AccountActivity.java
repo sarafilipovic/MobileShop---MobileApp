@@ -87,6 +87,20 @@ public class AccountActivity extends AppCompatActivity {
         openModal();
     }
 
+    public void showAboutUs(View view){
+        aboutUs();
+    }
+
+    private void aboutUs(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.about_modal, null);
+        builder.setView(dialogView);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 
     private void openModal(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
