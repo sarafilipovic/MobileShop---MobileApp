@@ -82,4 +82,28 @@ public class AccountActivity extends AppCompatActivity {
             Toast.makeText(AccountActivity.this, "EditText za lozinku je null", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void updateProfile(View view){
+        openModal();
+    }
+
+
+    private void openModal(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.modal, null);
+        builder.setView(dialogView);
+
+        novaLozinka = dialogView.findViewById(R.id.updatePassword);
+        Button changePasswordButton = dialogView.findViewById(R.id.changePassword);
+
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmReset(v);
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }
