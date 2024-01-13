@@ -151,7 +151,7 @@
         android:backgroundTint="@color/black"
         android:fontFamily="@font/lexend_deca"
         android:padding="10dp"
-        android:text="LOGIN"
+        android:text="REGISTER"
         android:onClick="registerButton"
         android:textStyle="bold"
         app:cornerRadius="0dp"
