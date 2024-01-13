@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,4 +37,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    public void registerButton(View view){
+        EditText firstName = findViewById(R.id.first_name);
+        EditText lastName = findViewById(R.id.last_name);
+        EditText email = findViewById(R.id.emailUser);
+        EditText password = findViewById(R.id.passwordUser);
+
+        String name = firstName.getText().toString();
+        String surname = lastName.getText().toString();
+        String emailUser = email.getText().toString();
+        String passwordUser = password.getText().toString();
+    }
 }
