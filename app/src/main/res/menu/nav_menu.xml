@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_item1"
+        android:title="Mobiteli"
+        />
+
+    <item
+        android:id="@+id/category"
+        android:title="Kategorije" />
+
+    <item
+        android:id="@+id/account"
+        android:title="Račun" />
+    <item
+        android:id="@+id/logout"
+        android:title="Odjava" />
+
+</menu>
