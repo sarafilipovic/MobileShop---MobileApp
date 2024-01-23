@@ -141,6 +141,7 @@ public class HomeActivity extends AppCompatActivity {
         final int ACCOUNT_MENU_ID = R.id.account;
         final int LOGOUT_MENU_ID = R.id.logout;
         final int MOBILE_MENU_ID = R.id.mobile;
+        final int CART_MENU_ID = R.id.kosarica;
 
 
         if (id == ACCOUNT_MENU_ID) {
@@ -152,6 +153,9 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             mobileBtn(null);
+        }else if (id == CART_MENU_ID){
+            Intent intent = new Intent(this, KosaricaActivity.class);
+            startActivity(intent);
         }
 
 
