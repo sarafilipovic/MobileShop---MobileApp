@@ -74,12 +74,7 @@ public class MobileAdapter extends RecyclerView.Adapter<MobileAdapter.MobileView
             }
         });
 
-        holder.dodajKosaricu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addToCart(mobile);
-            }
-        });
+
     }
 
 
@@ -89,44 +84,7 @@ public class MobileAdapter extends RecyclerView.Adapter<MobileAdapter.MobileView
 
     }
 
-    private void addToCart(Mobile mobile) {
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser != null) {
-            String userId = currentUser.getUid();
-            DatabaseReference cartRef = FirebaseDatabase.getInstance().getReference("cart").child(userId);
 
-            String itemId = mobile.getId();
-            String itemName = mobile.getImeMobitela();
-            String modelItem = mobile.getModel();
-            String itemPrice = mobile.getCijena();
-            String imageUrl = mobile.getSlika();
-            Log.e("Cart", "ItemID: " + itemId);
-            Log.e("Cart", "Naziv: " + itemName);
-            Log.e("Cart", "Cijena: " + itemPrice);
-            Cart cartItem = new Cart(itemId, itemName, modelItem, itemPrice, imageUrl);
-
-            String path = cartRef.child(itemId).toString();
-            Log.e("Cart", "Putanja u košarici: " + path);
-
-            cartRef.child(itemId).setValue(cartItem)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Log.e("Cart", "Dodano je " + itemName + " u košaricu");
-                            // Ovdje možete dodati dodatnu logiku nakon uspješnog dodavanja u košaricu
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e("Cart", "Greška prilikom dodavanja u košaricu: " + e.getMessage());
-                            // Ovdje možete dodati dodatnu logiku u slučaju neuspješnog dodavanja
-                        }
-                    });
-        } else {
-            Log.e("Cart", "Korisnik nije prijavljen");
-        }
-    }
 
     private void deleteItemMobile(String mobileid) {
 
